@@ -38,7 +38,7 @@ const {
   imageAlt={imageAlt}
 >
   <div class="flex min-h-screen flex-col">
-    <SiteHeader>
+    <!-- <SiteHeader>
       <MainNav
         slot="nav-header"
         segment={segment}
@@ -48,7 +48,7 @@ const {
         slot="mobile-nav-header"
         client:load
       />
-    </SiteHeader>
+    </SiteHeader> -->
     <main class:list={[
         'flex-1 container',
         mainClass,
@@ -56,6 +56,6 @@ const {
     >
       <slot />
     </main>
-    <SiteFooter />
+    <!-- <SiteFooter /> -->
   </div>
 </BaseLayout>
