@@ -6,6 +6,7 @@ export const post = defineCollection({
   schema: ({ image }) =>
     z.object({
       title: z.string(),
+      dir: z.string().optional(),
       description: z.string().optional(),
       cover: image().optional(),
       coverAlt: z.string().optional(),

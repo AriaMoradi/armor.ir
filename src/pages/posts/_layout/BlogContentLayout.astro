@@ -8,8 +8,16 @@ import { Image } from 'astro:assets'
 
 type Props = CollectionEntry<'post'>
 
-const { title, description, updatedDate, pubDate, cover, category, coverAlt } =
-  Astro.props.data
+const {
+  title,
+  description,
+  updatedDate,
+  pubDate,
+  cover,
+  category,
+  coverAlt,
+  dir
+} = Astro.props.data
 ---
 
 <MainLayout title={title} description={description} mainClass="px-2 md:px-10">
@@ -18,15 +26,20 @@ const { title, description, updatedDate, pubDate, cover, category, coverAlt } =
       'prose relative container max-w-[948px] dark:prose-invert',
       'flex w-full flex-col px-4 py-3 md:px-20'
     ]}
+    style={{ direction: dir === 'rtl' ? 'rtl' : 'ltr' }}
   >
     <article class="overflow-auto pt-2 pb-6 md:col-span-4 md:pt-4">
       <h1 class="mt-4 text-3xl">
         {title}
       </h1>
       <div class="flex flex-wrap items-center font-normal">
-        {formatDateWithYear(updatedDate) !== formatDateWithYear(pubDate) && <div class="mr-2 text-sm text-ds-gray-600 md:mr-4">
-          Updated On {formatDateWithYear(updatedDate)}
-        </div>}
+        {
+          formatDateWithYear(updatedDate) !== formatDateWithYear(pubDate) && (
+            <div class="mr-2 text-sm text-ds-gray-600 md:mr-4">
+              Updated On {formatDateWithYear(updatedDate)}
+            </div>
+          )
+        }
         <div class="flex">
           {
             category?.map((cat: string) => {
@@ -53,7 +66,7 @@ const { title, description, updatedDate, pubDate, cover, category, coverAlt } =
         </div>
       </div>
       {
-        cover ?
+        cover ? (
           <figure>
             <Image
               class="overflow-hidden rounded-xl"
@@ -70,11 +83,15 @@ const { title, description, updatedDate, pubDate, cover, category, coverAlt } =
               </figcaption>
             )}
           </figure>
-        : null
+        ) : null
       }
-      {description && <blockquote class="mt-6 border-l-2 pl-6 font-normal text-ds-gray-700">
-        {description}
-      </blockquote>}
+      {
+        description && (
+          <blockquote class="mt-6 border-l-2 pl-6 font-normal text-ds-gray-700">
+            {description}
+          </blockquote>
+        )
+      }
       <slot />
     </article>
   </section>
