@@ -8,7 +8,7 @@ import { Image } from 'astro:assets'
 
 type Props = CollectionEntry<'post'>
 
-const { title, description, updatedDate, cover, category, coverAlt } =
+const { title, description, updatedDate, pubDate, cover, category, coverAlt } =
   Astro.props.data
 ---
 
@@ -24,12 +24,12 @@ const { title, description, updatedDate, cover, category, coverAlt } =
         {title}
       </h1>
       <div class="flex flex-wrap items-center font-normal">
-        <div class="mr-2 text-sm text-ds-gray-600 md:mr-4">
+        {formatDateWithYear(updatedDate) !== formatDateWithYear(pubDate) && <div class="mr-2 text-sm text-ds-gray-600 md:mr-4">
           Updated On {formatDateWithYear(updatedDate)}
-        </div>
+        </div>}
         <div class="flex">
           {
-            category.map((cat: string) => {
+            category?.map((cat: string) => {
               return (
                 <Link
                   href={`/post/category/${cat}/`}
@@ -72,9 +72,9 @@ const { title, description, updatedDate, cover, category, coverAlt } =
           </figure>
         : null
       }
-      <blockquote class="mt-6 border-l-2 pl-6 font-normal text-ds-gray-700">
+      {description && <blockquote class="mt-6 border-l-2 pl-6 font-normal text-ds-gray-700">
         {description}
-      </blockquote>
+      </blockquote>}
       <slot />
     </article>
   </section>
