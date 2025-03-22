@@ -34,7 +34,7 @@ export default defineConfig({
   site: 'https://antzhu.com/',
   prefetch: true,
   integrations: [
-    db(),
+    // db(),
     mdx(),
     sitemap(),
     react(),
