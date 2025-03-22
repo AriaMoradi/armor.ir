@@ -1,6 +1,6 @@
 import type { MainNavItem } from '@/types'
 
-const base = 'armor.ir'
+const base = '/armor.ir'
 
 export const links: MainNavItem[] = [
   {
