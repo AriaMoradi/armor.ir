@@ -31,7 +31,8 @@ const res = JSON.stringify(await generateGitData())
  * https://astro.build/config
  */
 export default defineConfig({
-  site: 'https://antzhu.com/',
+  site: 'http://ariamoradi.github.io',
+  base: 'armor.ir',
   prefetch: true,
   integrations: [
     // db(),
@@ -40,21 +41,21 @@ export default defineConfig({
     react(),
     icon({
       include: {
-        'lucide': [
+        lucide: [
           'asterisk',
           'arrow-up-left',
           'arrow-up-right',
           'align-left',
           'hash',
-          'rss',
+          'rss'
         ],
-        'simple-icons': ['github', 'x', 'bluesky', 'notion', 'gmail'],
-      },
+        'simple-icons': ['github', 'x', 'bluesky', 'notion', 'gmail']
+      }
     }),
     partytown({
       config: {
-        forward: ['dataLayer.push'],
-      },
+        forward: ['dataLayer.push']
+      }
     }),
     playformCompress({
       HTML: true,
@@ -63,34 +64,36 @@ export default defineConfig({
       SVG: true,
       Action: {
         // https://github.com/PlayForm/Compress/issues/376
-        Passed: async () => true,
-      },
-    }),
+        Passed: async () => true
+      }
+    })
   ],
   markdown: {
     shikiConfig,
-    rehypePlugins,
+    rehypePlugins
   },
 
   image: {
-    remotePatterns: [{
-      protocol: 'https',
-    }],
+    remotePatterns: [
+      {
+        protocol: 'https'
+      }
+    ]
   },
   experimental: {
     contentIntellisense: true,
     responsiveImages: true,
-    svg: true,
+    svg: true
   },
   devToolbar: {
-    enabled: false,
+    enabled: false
   },
   vite: {
     server: {
-      allowedHosts: true,
+      allowedHosts: true
     },
     optimizeDeps: {
-      include: ['lucide-react'],
+      include: ['lucide-react']
     },
     plugins: [
       {
@@ -98,20 +101,20 @@ export default defineConfig({
         config() {
           return {
             define: {
-              PUBLIC_GIT_REVISION_INFO: res,
-            },
+              PUBLIC_GIT_REVISION_INFO: res
+            }
           }
-        },
+        }
       },
-      tailwindcss(),
-    ],
+      tailwindcss()
+    ]
   },
 
   env: {
     schema,
-    validateSecrets: false,
+    validateSecrets: false
   },
   adapter: netlify({
-    cacheOnDemandPages: false,
-  }),
+    cacheOnDemandPages: false
+  })
 })
