@@ -1,24 +1,25 @@
 import type { MainNavItem } from '@/types'
 
-export const links: MainNavItem[] = [
+
+export const links: (base: string) => MainNavItem[] = (base: string) => [
   {
     title: 'Post',
-    href: '/post/',
+    href: `${base}/post/`
   },
   {
     title: 'Short',
-    href: '/short/',
+    href: `${base}/short/`
   },
   {
     title: 'Projects',
-    href: '/projects/',
+    href: `${base}/projects/`
   },
   {
     title: 'Uses',
-    href: '/uses/',
+    href: `${base}/uses/`
   },
   {
     title: 'Collective',
-    href: '/collective/',
-  },
+    href: `${base}/collective/`
+  }
 ]
