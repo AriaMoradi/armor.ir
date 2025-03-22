@@ -20,8 +20,8 @@ const {posts, years} = Astro.props
     <span class="col-span-12 md:col-span-11">
       <span class="grid grid-cols-4 items-center md:grid-cols-8">
         <span class="col-span-1 text-left">Date</span>
-        <span class="col-span-3 md:col-span-4">Title</span>
-        <span class="hidden md:col-span-3 md:grid">Category</span>
+        <span class="col-span-3 md:col-span-7">Title</span>
+        <!-- <span class="hidden md:col-span-3 md:grid">Category</span> -->
       </span>
     </span>
   </div>
@@ -44,7 +44,7 @@ const {posts, years} = Astro.props
                     {itemIndex === 0 ? year : ''}
                   </span>
                   <Link
-                    href={`/post/${item.id}/`}
+                    href={`/posts/${item.id}/`}
                     title={item.id}
                     class={cn(
                       'col-span-12 group-hover/list-item:text-gray-900 md:col-span-11',
@@ -57,12 +57,12 @@ const {posts, years} = Astro.props
                           {formatSimpleDate(item.data.updatedDate)}
                         </time>
                       </span>
-                      <span class="col-span-3 line-clamp-1 md:col-span-4">
+                      <span class="col-span-3 line-clamp-1 md:col-span-7">
                         {item.data.title}
                       </span>
-                      <span class="line-clamp-1 hidden items-center md:col-span-3 md:flex md:space-x-2">
+                      {/* <span class="line-clamp-1 hidden items-center md:col-span-3 md:flex md:space-x-2">
                         <Tags tags={item.data.category || []} />
-                      </span>
+                      </span> */}
                     </span>
                   </Link>
                 </li>

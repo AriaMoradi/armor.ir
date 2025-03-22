@@ -18,14 +18,14 @@ const allPosts = (await getPosts()).slice(0, siteConfig.home.displayNumber)
         allPosts.length
         ? (
           <Link
-            href="/post/"
+            href="/posts/"
             title="View all posts"
             class="common-link link-animate text-xs"
           >
             View all
           </Link>
           <Link
-            href="/post.xml"
+            href="/posts.xml"
             title="Feed post rss"
             class="common-link link-animate text-xs pl-2"
           >
@@ -53,7 +53,7 @@ const allPosts = (await getPosts()).slice(0, siteConfig.home.displayNumber)
                           <div class="grid grid-cols-3 md:grid-cols-5 items-center">
                             <Link
                               title={item.data.title}
-                              href={`/post/${item.id}/`}
+                              href={`/posts/${item.id}/`}
                               class="col-span-2 md:col-span-4 line-clamp-1"
                             >
                               {item.data.title}
