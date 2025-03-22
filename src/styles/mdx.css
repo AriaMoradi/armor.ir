@@ -1,0 +1,66 @@
+@utility prose {
+  & img {
+    @apply mt-0 mb-0;
+  }
+
+  & ul {
+    list-style-type: none;
+  }
+  & ul > li {
+    @apply relative pl-2;
+  }
+  & ul li:before {
+    @apply mr-2 -ml-6 inline-block font-medium;
+    content: '-';
+  }
+}
+
+@utility not-prose {
+  &.code-wrapper {
+    @apply relative rounded border-[1px] border-solid border-gray-300;
+    pre code {
+      @apply grid py-4 text-sm;
+    }
+    pre code .line {
+      @apply pr-2 pl-4 leading-6;
+    }
+    .code-header {
+      @apply flex h-12 items-center justify-between border-b-[1px] border-solid border-b-gray-300 px-4;
+    }
+
+    .line.has-highlight {
+      background: var(--highlight);
+    }
+
+    span.highlighted-word {
+      background-color: var(--highlight);
+      border: 1px solid var(--highlight);
+      padding: 1px 3px;
+      margin: -1px -3px;
+      border-radius: 4px;
+    }
+
+    .line.diff.remove {
+      background: var(--diff-remove);
+    }
+    .line.diff.remove::before {
+      content: '-';
+      color: var(--color-red-700);
+      margin-right: 4px;
+    }
+    .line.diff.add {
+      background: var(--highlight);
+    }
+    .line.diff.add::before {
+      content: '+';
+      color: var(--color-green-700);
+      margin-right: 4px;
+    }
+  }
+}
+
+@layer utilities {
+  :not(pre) > code {
+    @apply relative rounded bg-background text-sm text-foreground;
+  }
+}

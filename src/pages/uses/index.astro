@@ -1,0 +1,70 @@
+---
+import type { UsingItem } from '@/types'
+import Link from '@/components/common/Link.astro'
+import MainLayout from '@/layouts/MainLayout.astro'
+import { Icon } from 'astro-icon/components'
+import { uses } from './_data'
+
+const useTypes = Object.keys(uses)
+---
+
+<MainLayout
+  title="Uses"
+  description="Things of Choice."
+>
+  <section class="prose dark:prose-invert container max-w-[948px] py-3 px-4 md:px-16">
+    <h1 class="pt-4 md:pt-8 scroll-m-20 text-3xl font-bold">
+      Things of Choice.
+    </h1>
+    <article class="overflow-auto relative flex flex-col">
+      {
+        useTypes.map((type) => {
+          return (
+            <h2 class="scroll-m-20 mt-0 mb-0 text-2xl font-semibold">
+              {type}
+            </h2>
+            <ul class="ml-1 list-disc">
+              {
+                uses[type].map((item: UsingItem) => {
+                  return (
+                    item.url
+                      ? (
+                        <li class="mt-2">
+                          <Link
+                            href={`${item.url}?ref=antzhu.com`}
+                            title={item.title}
+                            class="break-words pl-0! no-underline "
+                          >
+                            <h3 class="inline-flex leading-[2] mt-0 mb-0 font-medium common-link link-animate text-base text-black!">
+                              {item.title}
+                            </h3>
+                            <Icon
+                              name="lucide:arrow-up-right"
+                              class="inline-flex size-4 -mt-0.5 p-0.5 shrink-0 text-ds-gray-700"
+                            />
+                          </Link>
+                          {
+                            item.desc && <span class="text-[15px] text-ds-gray-1000"> — {item.desc}</span>
+                          }
+                        </li>
+                      )
+                      : (
+                        <li class="mt-2">
+                          <span class="font-medium text-ds-gray-1000 text-base pl-0!">
+                            {item.title}
+                          </span>
+                          {
+                            item.desc && <span class="text-sm text-ds-gray-1000"> — {item.desc}</span>
+                          }
+                        </li>
+                      )
+                  )
+                })
+              }
+            </ul>
+          )
+        })
+      }
+    </article>
+  </section>
+</MainLayout>

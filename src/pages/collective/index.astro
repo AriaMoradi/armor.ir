@@ -1,0 +1,18 @@
+---
+import MainLayout from '@/layouts/MainLayout.astro'
+import Friends from './_components/Friends.astro'
+---
+
+<MainLayout
+  title="Collective"
+  description="Collective records."
+>
+  <section class="prose dark:prose-invert container max-w-[948px] py-3 px-4 md:px-16">
+    <h1 class="pt-4 md:pt-8 scroll-m-20 text-3xl font-bold">
+      Collective records.
+    </h1>
+    <article class="overflow-auto relative flex flex-col">
+      <Friends />
+    </article>
+  </section>
+</MainLayout>
