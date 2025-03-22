@@ -31,8 +31,7 @@ const res = JSON.stringify(await generateGitData())
  * https://astro.build/config
  */
 export default defineConfig({
-  site: 'http://ariamoradi.github.io',
-  base: 'armor.ir',
+  site: 'https://armor.ir',
   prefetch: true,
   integrations: [
     // db(),

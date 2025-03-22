@@ -1,26 +1,24 @@
 import type { MainNavItem } from '@/types'
 
-const base = '/armor.ir'
-
 export const links: MainNavItem[] = [
   {
     title: 'Post',
-    href: `${base}/post/`
+    href: `post/`
   },
   // {
   //   title: 'Short',
-  //   href: `${base}/short/`
+  //   href: `short/`
   // },
   // {
   //   title: 'Projects',
-  //   href: `${base}/projects/`
+  //   href: `projects/`
   // },
   // {
   //   title: 'Uses',
-  //   href: `${base}/uses/`
+  //   href: `uses/`
   // },
   // {
   //   title: 'Collective',
-  //   href: `${base}/collective/`
+  //   href: `collective/`
   // }
 ]
