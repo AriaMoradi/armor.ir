@@ -1,7 +1,8 @@
 import type { MainNavItem } from '@/types'
 
+const base = 'armor.ir'
 
-export const links: (base: string) => MainNavItem[] = (base: string) => [
+export const links: MainNavItem[] = [
   {
     title: 'Post',
     href: `${base}/post/`

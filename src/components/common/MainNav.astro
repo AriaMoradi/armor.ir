@@ -8,13 +8,12 @@ type Props = {
 }
 
 const { segment } = Astro.props;
-const links_ = links('armor.ir')
 ---
 
 <nav>
   <ul class="flex flex-row items-center gap-4">
     {
-      links_.map((item: MainNavItem) => (
+      links.map((item: MainNavItem) => (
         <li class="relative list-none">
           <Link
             href={item.href}
