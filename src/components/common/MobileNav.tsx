@@ -7,7 +7,7 @@ import {
 } from '@/components/ui/drawer'
 import { links } from '@/config/menu'
 import { siteConfig } from '@/config/site'
-import { Icons } from '@/icons'
+import { Icons } from '@/components/common/Icons'
 import { cn } from '@/lib/utils'
 import { ArrowUpRightIcon, Github, Menu } from 'lucide-react'
 import * as React from 'react'
