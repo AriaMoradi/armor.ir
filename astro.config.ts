@@ -1,6 +1,5 @@
 import ChildProcess from 'node:child_process'
 import { promisify } from 'node:util'
-import db from '@astrojs/db'
 import mdx from '@astrojs/mdx'
 import netlify from '@astrojs/netlify'
 import partytown from '@astrojs/partytown'
@@ -16,8 +15,6 @@ import {
   rehypePlugins,
   shikiConfig,
 } from './config/plugins'
-
-import { schema } from './env.schema'
 
 const execAsync = promisify(ChildProcess.exec)
 
@@ -109,10 +106,6 @@ export default defineConfig({
     ]
   },
 
-  env: {
-    schema,
-    validateSecrets: false
-  },
   adapter: netlify({
     cacheOnDemandPages: false
   })

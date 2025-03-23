@@ -7,13 +7,13 @@ export const siteConfig: SiteConfig = {
   url: 'https://armor.ir',
   repoUrl: 'https://github.com/AriaMoradi/armor.ir',
   slogan: 'Slogans are cool.',
-  ogImage: 'https://www.antzhu.com/og.jpg',
+  ogImage: 'https://armor.ir/og.jpg',
   links: {
-    twitter: 'https://twitter.com/huakucha10',
-    github: 'https://github.com/MagicalZhu',
-    blueSky: 'https://bsky.app/profile/anthonyzhu.bsky.social',
-    notion: 'https://huakucha.notion.site/1538b781a49980dfa194f936fb7f2422',
-    email: 'hi@antzhu.com',
+    twitter: '#',
+    github: '#',
+    blueSky: '#',
+    notion: '#',
+    email: '#',
   },
   // pagination
   pagination: {
