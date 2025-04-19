@@ -17,7 +17,7 @@
     "@astrojs/check": "^0.9.4",
     "@astrojs/db": "^0.14.8",
     "@astrojs/mdx": "^4.2.1",
-    "@astrojs/netlify": "^6.2.2",
+    "@astrojs/netlify": "^6.2.6",
     "@astrojs/partytown": "^2.1.4",
     "@astrojs/react": "^4.2.1",
     "@astrojs/sitemap": "^3.2.1",
