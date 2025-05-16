@@ -6,7 +6,7 @@
 /** @type {Config} */
 const config = {
   tabWidth: 2,
-  printWidth: 80,
+  printWidth: 120,
   plugins: ["prettier-plugin-astro"],
   overrides: [
     {
